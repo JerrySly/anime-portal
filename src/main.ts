@@ -1,8 +1,36 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import App from "./App.vue";
-import router from "./router";
+import App from "./app/App.vue";
+import router from "./app/providers/router";
+import ApolloClient from 'apollo-boost';
+import VueApollo from "vue-apollo";
+
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import { myCustomTheme } from "./shared/styles/variabels";
+
+
+const vuetify = createVuetify({
+  components,
+  directives,
+  theme: {
+    defaultTheme: 'myCustomTheme',
+    themes: {
+      myCustomTheme,
+    }
+  },
+})
+
+
+const apolloClient = new ApolloClient({
+  uri: 'https://graphql.anilist.co'
+}) 
+const apolloProvider = new VueApollo({
+  defaultClient: apolloClient,
+})
 
 const pinia = createPinia();
 
-createApp(App).use(router).use(pinia).mount("#app");
+createApp(App).use(apolloProvider).use(vuetify).use(router).use(pinia).mount("#app");
