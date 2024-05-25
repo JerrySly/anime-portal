@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <search-block />
+  <div class="feed">
+    <div class="feed__search">
+      <search-block />
+    </div>
   </div>
 </template>
 
@@ -12,6 +14,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.feed {
+  &__search {
+    margin: auto;
+    width: 70%;
+    margin-top: 50px;
+  }
+}
 
 </style>
