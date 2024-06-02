@@ -2,8 +2,6 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import App from "./app/App.vue";
 import router from "./app/providers/router";
-import ApolloClient from 'apollo-boost';
-import VueApollo from "vue-apollo";
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'

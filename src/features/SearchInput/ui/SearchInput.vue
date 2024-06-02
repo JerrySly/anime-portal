@@ -33,7 +33,6 @@ import RecommendedSearchMedia from '@/entities/media/ui/RecommendedSearchMedia.v
 export default {
   components: { RecommendedSearchMedia },
   setup() {
-    console.log(autocompleteItems);
     return {autocompleteItems, debouncedSearch, loadingState, searchText}
   }
 }
