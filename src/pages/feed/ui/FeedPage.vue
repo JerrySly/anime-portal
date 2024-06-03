@@ -11,6 +11,12 @@
       title="Popular manga"
       :items="popularManga?.Page?.media"
     />
+    <div class="feed__list">
+      <infinite-list
+      
+      >
+      </infinite-list>
+    </div>
   </div>
 </template>
 
@@ -20,9 +26,10 @@ import MediaList from '@/widgets/MediaList/ui/MediaList.vue'
 import { onMounted } from 'vue'
 import {popularAnime, popularManga} from '../model'
 import { loadPopular } from '../lib'
+import InfiniteList from '@/widgets/InfiniteList/ui/InfiniteList.vue'
 
 export default {
-  components: { SearchBlock, MediaList },
+  components: { SearchBlock, MediaList, InfiniteList },
   setup() {
     onMounted(() => {
       loadPopular().then(data => {

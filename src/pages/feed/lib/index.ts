@@ -1,7 +1,7 @@
 import { Media } from "@/shared/__generated__/graphql";
 import { getPopularMedia } from "../api"
 
-type LoadPopularReturn = {
+export type LoadPopularReturn = {
   popularAnime: Array<Media>,
   popularManga: Array<Media>,
 }

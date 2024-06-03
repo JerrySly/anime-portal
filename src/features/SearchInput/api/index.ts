@@ -1,7 +1,6 @@
 import  gql  from "graphql-tag";
 import { apolloClient } from "@/shared/api/apolloClient";
 import { provideApolloClient, useLazyQuery, useQuery } from '@vue/apollo-composable'
-import { UseLazyQueryReturn } from "@vue/apollo-composable/dist/useLazyQuery";
 
 provideApolloClient(apolloClient)
 
@@ -17,6 +16,7 @@ const GET_RECOMMENDATION: any = gql`
           }
           coverImage {
             medium
+            large
           }
           description
         } 

@@ -20,7 +20,7 @@
   >
   <template #item="{ item }">
     <div class="ml-2 pa-2">
-      <recommended-search-media :img="item.props?.coverImage?.medium" :title="item.props?.value.title" :description="item.props.description"/>
+      <recommended-search-media :img="item.props?.coverImage?.large" :title="item.props?.value.title" :description="item.props.description"/>
     </div>
   </template>
   </v-autocomplete>

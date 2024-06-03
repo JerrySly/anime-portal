@@ -9,7 +9,7 @@ import {
 } from '@apollo/client/dev';
 
 const httpLink = createHttpLink({
-  uri: 'https://graphql.anilist.co'
+  uri: 'https://graphql.anilist.co',
 }) 
 
 const cache = new InMemoryCache()

@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render carousel 1`] = `
+VueWrapper {
+  "__app": null,
+  "__setProps": undefined,
+  "cleanUpCallbacks": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "componentVM": Object {
+    "button": true,
+    "buttonBetween": true,
+    "calculate": [Function],
+    "children": [Function],
+    "debounceId": undefined,
+    "displacement": 1,
+    "findNextSlot": [Function],
+    "findPrevSlot": [Function],
+    "hasNext": false,
+    "hasPrev": false,
+    "left": 0,
+    "next": [Function],
+    "onScroll": [Function],
+    "onScrollDebounce": [Function],
+    "prev": [Function],
+    "refresh": [Function],
+    "scroll": false,
+    "scrollToIndex": [Function],
+    "scrollToLeft": [Function],
+    "scrollWidth": 0,
+    "snap": "start",
+    "width": 0,
+  },
+  "isDisabled": [Function],
+  "rootVM": Object {
+    "VTU_COMPONENT": Object {
+      "items": Array [
+        Object {
+          "coverImage": Object {
+            "large": "test",
+          },
+          "id": 1,
+          "isFavourite": false,
+          "isFavouriteBlocked": false,
+        },
+      ],
+      "loaded": false,
+      "title": "",
+    },
+  },
+  "wrapperElement": <div
+    class="vue-horizontal"
+    responsive=""
+    style="position: relative; display: flex;"
+  >
+    <!---->
+    <!---->
+    <div
+      class="v-hl-container"
+      style="display: flex; width: 100%; margin: 0px 0px -30px 0px; padding: 0px 0px 30px 0px; box-sizing: content-box; overflow-x: scroll; overflow-y: hidden; scroll-snap-type: x mandatory; clip-path: inset(0 0 30px 0);"
+    >
+      
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      <v-skeleton-loader
+        class="skeleton-list__item"
+        min-height="260"
+        style="flex-shrink: 0; box-sizing: border-box; min-height: 1px; scroll-snap-align: start;"
+        type="card"
+        width="200"
+      />
+      
+    </div>
+  </div>,
+}
+`;
