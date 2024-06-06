@@ -1,5 +1,5 @@
 <template>
-  <div v-if="loaded">
+  <div v-if="items?.length">
     <h3 class="title">{{ title }}</h3>
     <vue-horizontal responsive v-if="items?.length" class="horizontal">
       <media-list-item
@@ -55,12 +55,6 @@ export default {
     }
   },
   setup(props: any) { // TODO: Нужно поставить нужный тип
-    watch(() => props.items, () => {
-      if (props.items?.length) {
-        console.log('set value');
-        loaded.value = true;
-      }
-    })
     return {
       ...props,
       loaded,

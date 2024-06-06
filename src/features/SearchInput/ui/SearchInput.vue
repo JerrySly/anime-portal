@@ -16,12 +16,11 @@
       scrollStrategy: 'block',
       contentClass: ''
     }"
-    @update:search="(search) => debouncedSearch(search)"
+    @update:search="(search) => debouncedSearch(search, loadFunc)"
   >
   <template #item="{ item }">
-    <div class="ml-2 pa-2">
-      <recommended-search-media :img="item.props?.coverImage?.large" :title="item.props?.value.title" :description="item.props.description"/>
-    </div>
+    <slot name="item-block" :item="item">
+    </slot>
   </template>
   </v-autocomplete>
 </template>
@@ -29,11 +28,16 @@
 <script lang="ts">
 import { autocompleteItems, loadingState, searchText } from '../model';
 import { debouncedSearch } from '../lib';
-import RecommendedSearchMedia from '@/entities/media/ui/RecommendedSearchMedia.vue';
 export default {
-  components: { RecommendedSearchMedia },
-  setup() {
-    return {autocompleteItems, debouncedSearch, loadingState, searchText}
+  props: {
+    loadFunc: {
+      type: Function,
+      default: () => null,
+    }
+  },
+  setup(props: any, { expose }: any) {
+    expose({debouncedSearch})
+    return {...props, autocompleteItems, debouncedSearch, loadingState, searchText}
   }
 }
 </script>

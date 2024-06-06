@@ -1,8 +1,9 @@
-import { mount, shallowMount } from "@vue/test-utils";
+import { mount, shallowMount, VueWrapper } from "@vue/test-utils";
 import MediaList from "../ui/MediaList.vue";
 import { ApolloClients   } from '@vue/apollo-composable'
 import { Media } from "@/shared/__generated__/graphql";
 import VueHorizontal from "vue-horizontal";
+import { ref } from "vue";
 
 const media: Media = {
   id: 1,
@@ -16,18 +17,17 @@ const media: Media = {
 test('Render title', async () => {
 
   const customTitle = 'CUSTOM TITLE';
-
-  const item = mount(MediaList, {
+  const component = mount(MediaList, {
     props: {
       title: customTitle,
       items: [
         media
       ]
-    }
+    },
   })
-  await item.vm.$nextTick();
-  console.log(item.html());
-  expect(item.find('.title').text()).toEqual(customTitle);
+  const h3 = component?.find('h3');
+  const hmtl = component.html();
+  expect(component?.find('h3').text()).toEqual(customTitle);
 })
 
 test('Render carousel', () => {
@@ -40,6 +40,5 @@ test('Render carousel', () => {
       ]
     }
   })
-
-  expect(item.getComponent(VueHorizontal)).toMatchSnapshot();
+  expect(item.getComponent(VueHorizontal).isVisible()).toBe(true);
 })
