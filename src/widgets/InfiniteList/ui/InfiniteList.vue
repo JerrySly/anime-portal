@@ -1,6 +1,8 @@
 <template>
   <div class="list">
-    <slot />
+    <div v-for="(item, index) in items" :key="index">
+      <slot name="card" :item="item"/>
+    </div>
     <div
       v-intersect="{
         handler: onIntersect,
@@ -19,6 +21,10 @@ export default {
   props: {
     onIntersect: {
       type: Function,
+      required: true,
+    },
+    items: {
+      type: Array,
       required: true,
     }
   },

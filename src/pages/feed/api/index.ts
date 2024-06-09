@@ -28,3 +28,4 @@ export const getPopularMedia = (type = 'ANIME', statusNotIn = ['RELEASING', 'FIN
     sort,
   })
 }
+
