@@ -15,6 +15,8 @@
       v-if="listMedia?.length"  
     >
       <infinite-list
+        :loading="loading"
+        :onIntersect="loadPage"
         :items="listMedia"
       >
         <template #card="{ item }">
@@ -29,34 +31,44 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import SearchBlock from '@/widgets/SearchBlock/ui/SearchBlock.vue'
 import MediaList from '@/widgets/MediaList/ui/MediaList.vue'
-import { onMounted } from 'vue'
-import {listMedia, popularAnime, popularManga} from '../model'
+import { defineComponent, onMounted } from 'vue'
+import {listMedia, loading, popularAnime, popularManga} from '../model'
 import { loadListMedia, loadPopular } from '../lib'
 import InfiniteList from '@/widgets/InfiniteList/ui/InfiniteList.vue'
 import MediaCard from '@/entities/media/ui/MediaCard.vue'
+import { useMainStore } from '@/store/main'
 
-export default {
+export default defineComponent({
   components: { SearchBlock, MediaList, InfiniteList, MediaCard },
   setup() {
+    const store = useMainStore();
+    const loadPage = () => {
+      loading.value = true;
+      loadListMedia(store.page, 15, 'ANIME', ['FINISHED', 'RELEASING'], 'UPDATED_AT_DESC').then(data => {
+        store.SET_PAGE(store.page + 1);
+        store.SET_LIST_ITEMS([...store.items, ...data.listItems.Page.media])
+        listMedia.value = store.items;
+        loading.value = false;
+      })
+    }
     onMounted(() => {
       loadPopular().then(data => {
         popularAnime.value = data.popularAnime.Page.media;
         popularManga.value = data.popularManga.Page.media;
       })
-      loadListMedia(1, 15, 'ANIME', ['FINISHED', 'RELEASING'], 'UPDATED_AT_DESC').then(data => {
-        listMedia.value = data.listItems.Page.media;
-      })
+      loadPage();
     });
     return {
       popularAnime,
       popularManga,
       listMedia,
+      loadPage,
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

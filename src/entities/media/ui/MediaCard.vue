@@ -11,10 +11,10 @@
   </div>  
 </template>
 <script lang="ts">
-import { ComputedRef } from 'vue';
+import { ComputedRef, defineComponent } from 'vue';
 import { RecommendedSearchMediaProps } from '../model';
 import { getDescriptionIsHtml } from '../lib';
-export default {
+export default defineComponent({
   props: {
     img: {
       type: String,
@@ -33,7 +33,7 @@ export default {
     const descriptionIsHtml: ComputedRef<boolean> = getDescriptionIsHtml(props);
     return {...props, descriptionIsHtml}
   },
-}
+})
 </script>
 <style lang="scss" scoped>
 .media-block {

@@ -4,14 +4,15 @@
       <slot name="card" :item="item"/>
     </div>
     <div
-      v-intersect="{
-        handler: onIntersect,
-        options: {
-          threshold: [0, 0.5, 1.0]
+    v-intersect="{
+      handler: onIntersect,
+      options: {
+        threshold: [0, 0.5, 1.0]
         }
-      }"
-    >
-      
+        }"
+    />
+    <div>
+      <v-progress-circular color="primary" indeterminate :size="61"></v-progress-circular>
     </div>
   </div>
 </template>
@@ -26,6 +27,10 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     }
   },
   setup(props) {
