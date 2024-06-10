@@ -9,7 +9,7 @@
       options: {
         threshold: [0, 0.5, 1.0]
         }
-        }"
+      }"
     />
     <div>
       <v-progress-circular color="primary" indeterminate :size="61"></v-progress-circular>
@@ -28,10 +28,6 @@ export default {
       type: Array,
       required: true,
     },
-    loading: {
-      type: Boolean,
-      default: false,
-    }
   },
   setup(props) {
     return {

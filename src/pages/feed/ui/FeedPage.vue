@@ -15,7 +15,6 @@
       v-if="listMedia?.length"  
     >
       <infinite-list
-        :loading="loading"
         :onIntersect="loadPage"
         :items="listMedia"
       >
@@ -27,6 +26,7 @@
           />
         </template>
       </infinite-list>
+      <search-filter />
     </div>
   </div>
 </template>
@@ -39,10 +39,11 @@ import {listMedia, loading, popularAnime, popularManga} from '../model'
 import { loadListMedia, loadPopular } from '../lib'
 import InfiniteList from '@/widgets/InfiniteList/ui/InfiniteList.vue'
 import MediaCard from '@/entities/media/ui/MediaCard.vue'
-import { useMainStore } from '@/store/main'
+import { useMainStore } from '@/shared/store/main'
+import SearchFilter from '@/widgets/SearchFilter/ui/SearchFilter.vue'
 
 export default defineComponent({
-  components: { SearchBlock, MediaList, InfiniteList, MediaCard },
+  components: { SearchBlock, MediaList, InfiniteList, MediaCard, SearchFilter },
   setup() {
     const store = useMainStore();
     const loadPage = () => {
