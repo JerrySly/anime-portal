@@ -12,7 +12,15 @@
       }"
     />
     <div>
-      <v-progress-circular color="primary" indeterminate :size="61"></v-progress-circular>
+      <v-progress-circular
+        v-if="loading"
+        color="primary"
+        indeterminate
+        :size="61"
+      />
+      <p class="empty" v-if="!loading && items?.length">
+        Not found any media
+      </p>
     </div>
   </div>
 </template>
@@ -28,6 +36,10 @@ export default {
       type: Array,
       required: true,
     },
+    loading: {
+      type: Boolean,
+      default: true,
+    }
   },
   setup(props) {
     return {
@@ -38,5 +50,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.empty {
+  
+}
 </style>
