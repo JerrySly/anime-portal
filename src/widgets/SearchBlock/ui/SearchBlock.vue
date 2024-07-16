@@ -2,7 +2,12 @@
   <search-input :loadFunc="searchMedia">
     <template #item-block="{item}">
       <div class="ml-2 pa-2">
-        <media-card :img="item.props?.coverImage?.large" :title="item.props?.value.title" :description="item.props.description"/>
+        <media-card
+          :id="item.props?.id"
+          :img="item.props?.coverImage?.large"
+          :title="item.props?.value.title"
+          :description="item.props.description"
+        />
       </div>
     </template>
   </search-input>

@@ -20,6 +20,7 @@
       >
         <template #card="{ item }">
           <media-card
+            :id="item.id"
             :title="item.title"
             :img="item.coverImage?.large"
             :description="item.description"

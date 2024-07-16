@@ -6,6 +6,7 @@
         v-for="(item, index) in items"
         class="media-list-item"
         :key="index"
+        :id="item?.id"
         :img="item?.coverImage"
         :title="item?.title"
       />

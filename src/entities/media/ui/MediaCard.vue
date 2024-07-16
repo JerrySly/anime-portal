@@ -1,14 +1,16 @@
 <template>
-  <div class="media-block">
-    <div class="media-block__left">
-      <v-img class="media-block__img" max-width="200" :src="img"/>
+  <router-link class="media-link" :to="{name: 'media', params: {id: id}}">
+    <div class="media-block">
+      <div class="media-block__left">
+        <v-img class="media-block__img" max-width="200" :src="img"/>
+      </div>
+      <div class="media-block__right">
+        <h2 class="media-block__title">{{ title?.userPreferred ?? title?.romaji }}</h2>
+        <div v-if="descriptionIsHtml" class="media-block__description" v-html="description"></div>
+        <div v-else class="media-block__description">{{ description }}</div>
+      </div>
     </div>
-    <div class="media-block__right">
-      <h2 class="media-block__title">{{ title?.userPreferred ?? title?.romaji }}</h2>
-      <div v-if="descriptionIsHtml" class="media-block__description" v-html="description"></div>
-      <div v-else class="media-block__description">{{ description }}</div>
-    </div>
-  </div>  
+  </router-link>
 </template>
 <script lang="ts">
 import { ComputedRef, defineComponent } from 'vue';
@@ -16,6 +18,10 @@ import { RecommendedSearchMediaProps } from '../model';
 import { getDescriptionIsHtml } from '../lib';
 export default defineComponent({
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     img: {
       type: String,
       default: null,
@@ -36,6 +42,10 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
+.media-link {
+  text-decoration: none;
+  color: black;
+}
 .media-block {
   display: flex;
   gap: 15px;

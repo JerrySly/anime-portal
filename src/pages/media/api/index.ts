@@ -2,11 +2,10 @@ import  gql  from "graphql-tag";
 import { useLazyQuery } from "@vue/apollo-composable"
 
 const GET_POPULAR_ANIME: any = gql`
-  query Rec($sort: [MediaSort]!, $statusNotIn: [MediaStatus]!, $type: MediaType) {
+  query Rec($id: Int!) {
       Page {
-        media(sort: $sort, status_not_in: $statusNotIn, type: $type) {
+        media(id: $id) {
         status
-        id
         coverImage {
           medium
           large
@@ -22,11 +21,8 @@ const GET_POPULAR_ANIME: any = gql`
   }
 `
 
-export const getPopularMedia = (type = 'ANIME', statusNotIn = ['RELEASING', 'FINISHED'], sort = 'POPULARITY_DESC') => {
+export const getMedia = (id: number) => {
   return useLazyQuery(GET_POPULAR_ANIME, {
-    type,
-    statusNotIn,
-    sort,
+    id,
   })
 }
-

@@ -1,5 +1,6 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import FeedPage from "@/pages/feed";
+import MediaPage from "@/pages/media/ui/MediaPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -7,10 +8,15 @@ const routes: Array<RouteRecordRaw> = [
     name: "home",
     component: FeedPage,
   },
+  {
+    path: "/media/:id",
+    name: "media",
+    component: MediaPage,
+  }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

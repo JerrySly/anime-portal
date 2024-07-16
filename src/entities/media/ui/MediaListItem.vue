@@ -1,15 +1,17 @@
 <template>
-  <div class="block">
-    <v-img
-      class="block__image"
-      cover
-      v-if="img?.large"
-      :src="img.large"
-    />
-    <p class="block__title">
-      {{ title?.userPreferred }}
-    </p>
-  </div>
+  <router-link name="media" :to="{name: 'media', params: {id: id}}">
+    <div class="block">
+      <v-img
+        class="block__image"
+        cover
+        v-if="img?.large"
+        :src="img.large"
+      />
+      <p class="block__title">
+        {{ title?.userPreferred }}
+      </p>
+    </div>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -17,6 +19,10 @@ import { Maybe, MediaCoverImage, MediaTitle } from '@/shared/__generated__/graph
 import { PropType } from 'vue'
 export default {
   props: {
+    id: {
+      type: Number,
+      require: true,
+    },
     img: {
       type: Object as PropType<Maybe<MediaCoverImage>>,
       require: true,
