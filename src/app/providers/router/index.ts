@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/media/:id",
     name: "media",
     component: MediaPage,
+  },
+  {
+    path: "/character/:id",
+    name: "character",
+    component: MediaPage,
   }
 ];
 

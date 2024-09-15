@@ -10,7 +10,7 @@
           {{ selectedMedia?.averageScore }} / 100
         </div>
     </div>
-    <div class="media__info">
+    <div class="media__right">
       <div class="title">{{ selectedMedia?.title?.userPreferred }}</div>
       <div class="tags">
         <tag-button v-for="tag in selectedMedia?.tags?.slice(0, 6)" :tag="tag" :key="tag?.name"/>
@@ -18,6 +18,14 @@
       <div class="param" v-for="param in params" :key="param.name">
         <div class="param__name">{{ param.name }}:</div>
         <div class="param__value">{{ param.value }}</div>
+      </div>
+      <div class="description" v-html="selectedMedia?.description">
+      </div>
+      <div class="characters">
+        <character-list
+          title="Characters"
+          :items="selectedMedia?.characters?.nodes"
+        />
       </div>
     </div>
   </div>
@@ -29,9 +37,11 @@ import { useRoute } from "vue-router";
 import { useMediaStore } from '@/shared/store/media'
 import TagButton from "@/entities/tag/ui/TagButton.vue";
 import { transformCountryToLang, transformStatusToLang } from "@/shared/lib/constantTransform";
+import CharacterList from "@/widgets/CharacterList/ui/CharacterList.vue";
+// import MediaList from "@/widgets/MediaList/ui/MediaList.vue";
 
 export default defineComponent({
-  components: { TagButton },
+  components: { TagButton, CharacterList },
   setup() {
     const route = useRoute();
     const mediaStore = useMediaStore()
@@ -60,7 +70,7 @@ export default defineComponent({
       if (score <= 25) return 'score__low';
       if (score <= 50 && score > 25) return 'score__mid';
       if (score <= 75 && score > 50) return 'score__high';
-      return 'score__very-hight'
+      return 'score__very-high'
     })
 
     return {
@@ -102,7 +112,7 @@ export default defineComponent({
       }
     }
   }
-  &__info {
+  &__right {
     flex: 70%;
     text-align: left;
 
@@ -130,6 +140,9 @@ export default defineComponent({
         color: rgb(var(--v-theme-info__text));
 
       }
+    }
+    .description {
+      margin-top: 30px;
     }
   }
 }
